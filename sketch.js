@@ -11,7 +11,7 @@ var trap;
 var trap1, trap2;
 
 var player, playerAnime, player_stop;
-
+var event;
 var ran;
 
 var trapGroup, treasureGroup;
@@ -114,7 +114,7 @@ if (player.isTouching(trapGroup)){
      }
     
    } else if (gameState == 0){
-      player.collide(barricade);
+      
      
      end();
    }
