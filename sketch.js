@@ -49,7 +49,7 @@ function setup(){
     player.addAnimation("anime",playerAnime);
     player.addAnimation("anime2",player_stop);
     player.scale  = 0.075;
-  
+    player.velocityY = 0;
     
     gameOver = createSprite(width/2,height/2-50,10,10);
     gameOver.addAnimation("gameover",gameoverImg);
