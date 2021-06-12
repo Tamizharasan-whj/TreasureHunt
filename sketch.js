@@ -77,6 +77,7 @@ function draw(){
    if (gameState == 1){
      
   Touch();
+     touching(event);
     player.x=World.mouseX;
      
      gameOver.visible = false;
@@ -206,7 +207,7 @@ function reset(){
 
 function Touch(){
   if(touches.length > 0 && player.y  >= height-120) {
-      player.velocityY = -10;
+   
        touches = [];
     }
 }
@@ -221,7 +222,7 @@ function destroy2(player,treasure){
   gameState = 0;
 }
 
-function touching(){
+function touching(event){
   var x = event.touches[0].X;
   player.x = x
   console.log(x);
