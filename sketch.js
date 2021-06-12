@@ -183,7 +183,7 @@ function end (){
      gameOver.visible = true;
      player.changeAnimation("anime2", player_stop);
   
-  if(mousePressedOver(restart)){
+  if(mousePressedOver(restart)||touchedOver(restart){
     
     reset();
   }
