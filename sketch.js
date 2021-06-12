@@ -1,6 +1,7 @@
 var gameState = 1;
 var PLAY= 1;
 var END = 0;
+var barricade;
 
 var road, roadImage; 
 var diamondImage, cashImage,jwellImage;
@@ -44,12 +45,14 @@ function setup(){
     road.velocityY =6;
   
   
-  
+    barricade = createSprite(width/2,height-110,width,10)
+    barricade.visible = false;
     player= createSprite(width/2,height-100,10,10);
     player.addAnimation("anime",playerAnime);
     player.addAnimation("anime2",player_stop);
     player.scale  = 0.075;
     player.velocityY = 0;
+  player.collide(barricade);
     
     gameOver = createSprite(width/2,height/2-50,10,10);
     gameOver.addAnimation("gameover",gameoverImg);
@@ -84,7 +87,7 @@ function draw(){
      restart.visible = false;
      
      ran = Math.round(random(1,2));
-        
+         player.collide(barricade);
      if (World.frameCount%80==0){
        if(ran==1){
        spawnTreasures();
@@ -111,7 +114,7 @@ if (player.isTouching(trapGroup)){
      }
     
    } else if (gameState == 0){
-     
+      player.collide(barricade);
      
      end();
    }
@@ -168,7 +171,7 @@ function spawnTrap(){
 
 function end (){
   
-  
+   player.collide(barricade);
   restart.visible = true;
   
      treasureGroup.setLifetimeEach(-1);
@@ -201,7 +204,7 @@ function reset(){
   treasureGroup.destroyEach();
   road.velocityY = 6;
   score = 0;
-  
+   player.collide(barricade);
   
 }
 
