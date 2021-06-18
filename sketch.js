@@ -80,7 +80,7 @@ function draw(){
    if (gameState == 1){
      
   Touch();
-     touching(event);
+    // touching(event);
     player.x=World.mouseX;
      
      gameOver.visible = false;
@@ -225,8 +225,8 @@ function destroy2(player,treasure){
   gameState = 0;
 }
 
-function touching(event){
+/*function touching(event){
   var x = event.touches[0].X;
   player.x = x
   console.log(x);
-}
+}*/
