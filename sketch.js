@@ -53,6 +53,8 @@ function setup(){
     player.scale  = 0.075;
     player.velocityY = 0;
   player.collide(barricade);
+  player.debug = true;
+  
     
     gameOver = createSprite(width/2,height/2-50,10,10);
     gameOver.addAnimation("gameover",gameoverImg);
@@ -156,6 +158,7 @@ function spawnTrap(){
   trap.velocityY = 4;
   trap.scale = 0.15;
   trap.lifetime = 200;
+  trap.debug = true;
   
    if (r ==1){
      trap.addImage("trap1", trap1);     
